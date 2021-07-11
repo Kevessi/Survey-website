@@ -2,10 +2,15 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/reset.css"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+
   </head>
   <body>
     <header>
-      <h1 id="title">Keven.co Personal Information Survey</h1>
+      <h1 id="title">Keven.co's Performance Survey</h1>
       <p id="description">
         Thank you for taking the time to participace in this survey
       </p>
@@ -44,7 +49,7 @@
           />
           <!-- for number range use type="number"-->
 
-          <label id="option-label labels">Preferred Hobby</label>
+          <label id="option-label" id="labels">Preferred Hobby</label>
           <select id="dropdown">
             <!--This one if if the user is requiered to entter it-->
             <option id="visible-option" value="Select a role" disabled="true">
@@ -69,7 +74,7 @@
         </fieldset>
 
         <fieldset class="radio-container border" placeholder="Information">
-          <p class="tlt">Would you recommend freeCodeCamp to a friend</p>
+          <p class="tlt">Would you recommend us to a friend</p>
           <!--name attibute will make it so that when one radio of the same item gets selected, 
             the others get deselected. Doesn't seem to work for checkbox because checkbox is made so that you can select as much options as possible-->
           <label>
@@ -99,7 +104,7 @@
         </fieldset>
 
         <fieldset class="textbox-container border">
-          <p class="tlt">What is your favorite feature of freeCodeCamp</p>
+          <p class="tlt">What is your favorite feature our company</p>
           <select id="dropdown">
             <option value="" disabled="true">Select an option</option>
             <option value="">Challenges</option>
