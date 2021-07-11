@@ -1,0 +1,164 @@
+/*try to use display flex and grid as much as possible and 
+position absolute and relative only when making super small tweaks*/
+
+/*you don't need to create another div to contain the elemets that 
+are alread inside of the container(though could be useful), 
+matching classes does the trick. 
+You could use a child div but you still need to inherit stuffs and alsouse display: flex or grid*/
+
+/*moving a containing is not the same as moving multiple items that have the same
+class name in a container. Regardless they both need display flex*/
+
+/*child items need display:flex on their own too*/
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  /*min-height: 100vh; only if you need to add a footer*/
+  position: relative;
+
+  /*using height instead of min-height because we don't
+  need the background to adapt to the content which is the whitesmoke container because that means that 
+  all the screen will be covered by the  whitesmokey container and the other items won't have their own space
+  hence why we use height: 1000px to set a*/
+  background-image: url("https://wallpaperaccess.com/full/856732.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; /* will set the background fixed and make it background index for us. position: fixed just doesn't wotk for background images
+    it only works for every other items except background*/
+  background-position: center; /*makes background responsive, again only for background image*/
+}
+
+header {
+  /*don't set the header to min-height*/
+  position: relative;
+  color: white;
+  top: 30px;
+}
+#title {
+  display: flex;
+  justify-content: center;
+}
+#description {
+  display: flex;
+  justify-content: center;
+}
+main {
+  height: 1100px; /*the bigger the main, the more space there will be between
+  header and top of main not the top of the content of the main.*/
+  display: flex;
+  justify-content: center; /* centers the survey div inside of it since main is
+  the parent container of survey div*/
+}
+
+#survey-form {
+  min-height: 100vh;
+  position: absolute;
+  bottom: 100px;
+  background-color: whitesmoke;
+  opacity: 0.9;
+
+  /*makes any div adapt to it's content size, 
+  bottom 0 makes sure that it still stay at the bottom of the page*/
+
+  width: 80%;
+  bottom: 0px;
+}
+
+.border {
+  border: 0; /*Makes feildset borders invisible*/
+}
+
+.textbox-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /*because of colums*/
+  justify-content: center;
+}
+.txtbox {
+  height: 30px;
+  width: 80%;
+  border-radius: 5px;
+}
+#labels {
+  width: 100%;
+  /*justify-self: start; doesn't work for flexbox appearently*/
+  display: flex;
+  justify-content: flex-start; /*align works with sigular items meanwhile jsutify doesn't have that so you got to do another display flex*/
+  margin-left: 140px;
+  position: relative;
+  top: 20px;
+}
+#dropdown {
+  height: 30px;
+  margin-top: 20px;
+  width: 80%;
+  border-radius: 5px;
+}
+
+#visible-option {
+  color: gray;
+  opacity: 0.9;
+}
+
+.radio-container {
+  display: flex;
+  flex-direction: column;
+}
+.tlt {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.radios {
+  margin-left: 70px; /*created border splace*/
+  margin-right: 10px; /**/
+  margin-top: 18px;
+}
+.checkbox-container {
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+}
+.chk {
+  margin-top: 15px;
+  margin-left: 70px;
+  margin-right: 10px;
+  transform: scale(1);
+}
+
+.comments-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0;
+  margin-bottom: 15px;
+}
+.comment-tlt {
+  margin-bottom: 10px;
+}
+#comments {
+  height: 80px;
+  width: 85%;
+}
+.submit-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+#submit {
+  background-color: green;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 85%;
+}
+.btn:hover {
+  background-color: rgb(95, 151, 11);
+  transform: translate(1.05);
+}
